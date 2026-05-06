@@ -1,0 +1,17 @@
+{
+  "repo": "signal-sim-market-scope",
+  "thresholds": {
+    "signal": 4,
+    "slack": 1,
+    "confidence": 1,
+    "drag": 5,
+    "ship": 167,
+    "watch": 117
+  },
+  "terms": [
+    "input pressure",
+    "state drift",
+    "review cost",
+    "decision risk"
+  ]
+}
