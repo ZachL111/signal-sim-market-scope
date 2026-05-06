@@ -1,0 +1,73 @@
+{
+  "repo": "signal-sim-market-scope",
+  "language": "C#",
+  "category": "Simulations",
+  "goal": "Create a C# reference implementation for market workflows, centered on storage recovery, log and snapshot fixtures, and replay consistency checks.",
+  "review_model": {
+    "terms": [
+      "input pressure",
+      "state drift",
+      "review cost",
+      "decision risk"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "input pressure",
+      "signal": 49,
+      "slack": 33,
+      "drag": 31,
+      "confidence": 53,
+      "score": 91,
+      "lane": "hold"
+    },
+    {
+      "name": "stress",
+      "focus": "state drift",
+      "signal": 54,
+      "slack": 49,
+      "drag": 25,
+      "confidence": 47,
+      "score": 129,
+      "lane": "watch"
+    },
+    {
+      "name": "edge",
+      "focus": "review cost",
+      "signal": 83,
+      "slack": 32,
+      "drag": 8,
+      "confidence": 70,
+      "score": 244,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "decision risk",
+      "signal": 79,
+      "slack": 25,
+      "drag": 18,
+      "confidence": 76,
+      "score": 205,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "input pressure",
+      "signal": 86,
+      "slack": 46,
+      "drag": 13,
+      "confidence": 65,
+      "score": 244,
+      "lane": "ship"
+    }
+  ]
+}
